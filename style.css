@@ -16,6 +16,11 @@ body {
   justify-content: center;
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
 table {
   width: 200px;
   border: 1px solid black;
@@ -54,14 +59,24 @@ button {
   width: 200px;
   height: 40px;
   
-  border: 1px solid black;
-  border-top: 0;
   margin: 0 auto;
-  border-radius: 0 0 10px 10px;
+  border: 0;
   
   background: lightgray;
   
   transition: .2s;
+}
+
+.btn {
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+  border-bottom: 1px dashed black;
+}
+
+button + button {
+  border: 1px solid black;
+  border-top: 0;
+  border-radius: 0 0 10px 10px;
 }
 
 button,
@@ -70,7 +85,6 @@ legend {
 }
 
 button:hover {
-  box-shadow: 0px 0px 5px grey;
   text-shadow: 2px 2px 25px grey;
   color: rgba(0, 0, 0, .8);
 }
