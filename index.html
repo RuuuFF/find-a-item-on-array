@@ -25,9 +25,14 @@
         <td>Preço:</td>
         <td id="price">?</td>
       </tr>
+      <tr>
+        <td>Total de itens:</td>
+        <td id="itemsOnCart">0</td>
+      </tr>
     </table>
-    <button class="btn" onclick="addItem()">Adicionar item</button>
-    <button onclick="searchItem()">Pesquisar item</button>
+    <button class="first-btn" onclick="addItem()">Adicionar</button>
+    <button class="first-btn" onclick="removeLastItem()">Remover último</button>
+    <button onclick="searchItem()">Pesquisar</button>
   </div>
   
   <script src="main.js"></script>

@@ -1,21 +1,39 @@
 var shopCart = new Array();
 
-var itemIndex = 0;
+var itemsOnCart = document.querySelector("#itemsOnCart");
+var itemIndex = -1;
+
+function noneValue() {
+  alert("🛑 Item, quantidade ou preço não foi inserido. 🛑");
+}
 
 function addItem() {
-  shopCart[itemIndex] = [];
-
   var itemName = prompt("Item:");
   var itemAmount = prompt("Quantidade:");
   var itemPrice = prompt("Preço:");
-
-  if ((itemName || itemAmount || itemPrice) == "")
-    shopCart.pop();
-  else if ((itemName || itemAmount || itemPrice) == null)
-    shopCart.pop();
+  
+  if ((itemName == "") || (itemAmount == "") || (itemPrice == ""))
+    noneValue();
+  else if ((itemName  == null) || (itemAmount == null) || (itemPrice == null))
+    noneValue();
   else {
-    shopCart[itemIndex].push(itemName, itemAmount, "R$"+itemPrice);
     itemIndex++;
+    shopCart[itemIndex] = [];
+    shopCart[itemIndex].push(itemName, itemAmount, "R$"+itemPrice);
+    itemsOnCart.innerHTML = itemIndex + 1;
+  }
+}
+
+function removeLastItem() {
+  if (itemIndex == -1)
+    alert("Você não possui itens no carrinho.");
+  else {
+    var removeQuestion = confirm("Deseja remover o último item?");
+    if (removeQuestion == true) {
+        shopCart.pop();
+        itemsOnCart.innerHTML = itemIndex;
+        itemIndex--;
+    }
   }
 }
 

@@ -5,27 +5,53 @@
   box-sizing: border-box;
 }
 
+body,
+.container {
+  display: flex;
+}
+
 body {
   width: 100vw;
   height: 100vh;
   
   font-family: sans-serif;
   
-  display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .container {
-  display: flex;
   flex-direction: column;
 }
 
-table {
-  width: 200px;
+legend,
+td {
+  padding: 5px;
+}
+
+legend,
+button {
+  font-weight: 500;
+}
+
+legend,
+td:last-child {
+  text-align: center;
+}
+
+table,
+td, 
+button {
   border: 1px solid black;
+}
+
+table {
   border-bottom: 0;
-  
+}
+
+table,
+button {
+  width: 250px;
   background: lightgrey;
 }
 
@@ -37,51 +63,29 @@ tr:nth-child(2) {
   background: lightgreen;
 }
 
-tr:last-child {
+tr:nth-child(3) {
   background: lightblue;
 }
 
-td {
-  border: 1px solid black;
-}
-
-td:first-child,
-legend{
-  padding: 5px;
-}
-
-td:last-child,
-legend {
-  text-align: center;
+tr:last-child {
+  background: lightskyblue;
 }
 
 button {
-  width: 200px;
   height: 40px;
   
   margin: 0 auto;
-  border: 0;
-  
-  background: lightgray;
+  border-top: 0;
   
   transition: .2s;
 }
 
-.btn {
-  border-right: 1px solid black;
-  border-left: 1px solid black;
+.first-btn {
   border-bottom: 1px dashed black;
 }
 
-button + button {
-  border: 1px solid black;
-  border-top: 0;
+button:last-child {
   border-radius: 0 0 10px 10px;
-}
-
-button,
-legend {
-  font-weight: 500;
 }
 
 button:hover {
